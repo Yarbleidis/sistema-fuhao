@@ -40,11 +40,24 @@ def leer_opcion(mensaje, valida):
         opcion = input(mensaje).strip().upper()
     return opcion
 
+
+#Leer_celular solicita el número de celular y valída que tenga exactamente 9 dígitos y empiece con 9, como los celulares
+#de Perú. Isdigit() comprueba que solo haya números, len() cuenta los caracteres y celular[0] es el primer dígito.
+#While repite la solicitud hasta que el número cumpla las tres condiciones, y return devuelve el celular.
+def leer_celular(mensaje):
+    celular = input(mensaje).strip()
+    while not (celular.isdigit() and len(celular) == 9 and celular[0] == "9"):
+        print("Error: Ingresa un celular de 9 dígitos que empiece con 9.")
+        celular = input(mensaje).strip()
+    return celular
+
+
 def ejecutar():
     print("\n=== MÓDULO DE GESTIÓN Y CÁLCULO DE PEDIDOS ===")
 
 
     cliente = leer_texto("Ingrese el nombre del cliente: ")
+    celular = leer_celular("Ingrese el numero celular del cliente: ")
 
     #leer_texto llama a la funcion para validar que cliente no este vacío.
 
@@ -161,6 +174,7 @@ def ejecutar():
     print("BOLETA DE PEDIDO".center(ancho))
     print("=" * ancho)
     print(f"Cliente: {cliente}")
+    print(f"Celular: {celular}")
     print(f"Tipo de pedido: {nombres_tipo[tipo]}") #Diccionario, si tipo contiene "D", nombres_tipo[tipo] devuelve
                                                    #Delivery. Asi muestra el nombre completo en lugar de la letra.
     print("-" * ancho)
