@@ -4,8 +4,8 @@ Proyecto del curso Fundamentos de Programación 1.
 
 ## Cómo ejecutarlo
 1. Tener Python 3 instalado.
-2. Descargar el archivo TB-2.py
-3. Ejecutarlo con: python TB-2.py
+2. Descargar el archivo fu-hao-main
+3. Ejecutarlo con: python fu-hao-main
 
 ## Integrantes
 - Mateo Chavez
