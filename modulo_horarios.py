@@ -1,4 +1,7 @@
-# Listas paralelas para la información de los trabajadores
+# ============================================
+# SISTEMA DE HORARIOS DEL CHIFA FU HAO
+# ============================================
+
 nombres = []
 horas_entrada = []  # Turno programado de entrada
 horas_salida = []  # Turno programado de salida
