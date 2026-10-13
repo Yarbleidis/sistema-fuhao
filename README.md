@@ -1,4 +1,4 @@
-# Sistema de Pedidos - Chifa Fu-Hao
+# Sistema - Chifa Fu-Hao
 
 Proyecto del curso Fundamentos de Programación 1.
 
