@@ -59,7 +59,6 @@ def ejecutar():
     cliente = leer_texto("Ingrese el nombre del cliente: ")
     celular = leer_celular("Ingrese el numero celular del cliente: ")
 
-    #leer_texto llama a la funcion para validar que cliente no este vacío.
 
     print("\nTipo de pedido:")
     print("L = En local")
