@@ -89,8 +89,8 @@ def ejecutar():
     continuar = "S"
     while continuar == "S":
         print("\n--- Nuevo producto ---")
-        nombre = leer_texto("Ingrese el nombre del producto: ")  #Leer_texto para evitar que quede vacío.
-        precio = leer_precio("Ingrese el precio del producto (S/): ")  #Leer_precio se asegura que el precio sea mayor a 0.
+        nombre = leer_texto("Ingrese el nombre del producto: ")  
+        precio = leer_precio("Ingrese el precio del producto (S/): ")  
         while True:
             try:
                 cantidad = int(input("Cantidad: "))
