@@ -47,7 +47,7 @@ def leer_opcion(mensaje, valida):
 def leer_celular(mensaje):
     celular = input(mensaje).strip()
     while not (celular.isdigit() and len(celular) == 9 and celular[0] == "9"):
-        print("Error: Ingresa un celular de 9 dígitos que empiece con 9.")
+        print("\nError: Ingresa un celular de 9 dígitos que empiece con 9.")
         celular = input(mensaje).strip()
     return celular
 
