@@ -101,10 +101,10 @@ def ejecutar():
             except ValueError:
                 print("Error: Ingresa un numero entero.")
 
-        nombres.append(nombre)  #Agregamos el valor de nombre a la lista de nombres.
-        precios.append(precio)  #Agregamos el precio del producto a la lista precios.
-        cantidades.append(cantidad)  #Cantidad se añade a la lista cantidades.
-        subtotales.append(precio * cantidad)  #Multiplica el precio y cantidad, luego agrega resultado a la lista subtotales.
+        nombres.append(nombre)  
+        precios.append(precio)  
+        cantidades.append(cantidad)  
+        subtotales.append(precio * cantidad) 
 
         continuar = leer_opcion("¿Agregar otro producto? (S/N): ", ["S", "N"])
         #Llamamos a leer_opcion para que el usuario responda S/N, y si responde otra cosa la función lo marca como error.
