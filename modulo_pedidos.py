@@ -3,9 +3,7 @@
 # ============================================
 
 
-#Leer_texto solicita un texto al usuario mediante un input() y utiliza strip() para eliminar los espacios en blanco.
-#Después, emplea while para comprobar si la respuesta está vacía. Si lo está, muestra un mensaje de error y vuelve a
-#solicitar el texto. Cuando se ingrese una respuesta no vacía, return devuelve el texto y termina la función.
+
 def leer_texto(mensaje):
     texto = input(mensaje).strip()
     while texto == "":
@@ -14,10 +12,7 @@ def leer_texto(mensaje):
     return texto
 
 
-#Leer_precio solicita un precio y válida que sea un número mayor que cero. Utiliza while para repetir la solicitud hasta
-#obtener un dato válido. Try para que intente el código valor, if comprueba que el valor sea mayor que cero, y return
-#devuelve el precio y termina la función. Si ocurre un ValueError, except captura el error y pass permite continuar sin
-#ejecutar ninguna acción en ese bloque. Si el precio no es válido se muestra un mensaje de error
+
 def leer_precio(mensaje):
     while True:
         try:
@@ -29,10 +24,7 @@ def leer_precio(mensaje):
         print("Error: Ingresa un numero mayor que 0.")
 
 
-#Función leer_opción recibe un mensaje y una lista de opciones válidas. Input() para solicitar una respuesta, strip()
-#para eliminar espacios al principio y final, y upper() para convertir a mayúsculas. Mediante while comprueba si la
-#opción ingresada no pertenece a la lista de opciones válidas. Si no pertenece muestra un mensaje de error y vuelva a
-#solicitar. Cuando se ingresa una opción válida, return devuelve la respuesta y termina la funcion.
+
 def leer_opcion(mensaje, valida):
     opcion = input(mensaje).strip().upper()
     while opcion not in valida:
@@ -41,9 +33,7 @@ def leer_opcion(mensaje, valida):
     return opcion
 
 
-#Leer_celular solicita el número de celular y valída que tenga exactamente 9 dígitos y empiece con 9, como los celulares
-#de Perú. Isdigit() comprueba que solo haya números, len() cuenta los caracteres y celular[0] es el primer dígito.
-#While repite la solicitud hasta que el número cumpla las tres condiciones, y return devuelve el celular.
+
 def leer_celular(mensaje):
     celular = input(mensaje).strip()
     while not (celular.isdigit() and len(celular) == 9 and celular[0] == "9"):
@@ -66,8 +56,7 @@ def ejecutar():
     print("D = Delivery")
     tipo = leer_opcion("Elige (L/P/D): ", ["L", "P", "D"])
 
-    #Leer_opcion llama a la funcion, la cual recibe dos argumentos, el mensaje que se muestra, y la lista de respuestas
-    #permitidas. En pocas palabras, mostramos los tipos de pedido, solicitamos una opcion válida, y guardamos en tipo.
+    
 
     nombres_tipo = {
         "L": "Local",
@@ -75,16 +64,14 @@ def ejecutar():
         "D": "Delivery"
     }
 
-    #Creamos un diccionario que relaciona cada letra del tipo de pedido con su nombre completo, para mostrarlo de forma
-    #más clara más adelante.
+    
 
     nombres = []
     precios = []
     cantidades = []
     subtotales = []
 
-    #Creamos cuatro listas vacías para almacenar nombres, precios, cantidades, y subtotales de los productos
-    #que el cliente vaya agregando.
+    
 
     continuar = "S"
     while continuar == "S":
@@ -107,8 +94,7 @@ def ejecutar():
         subtotales.append(precio * cantidad) 
 
         continuar = leer_opcion("¿Agregar otro producto? (S/N): ", ["S", "N"])
-        #Llamamos a leer_opcion para que el usuario responda S/N, y si responde otra cosa la función lo marca como error.
-        #Repite el proceso hasta que el usuario marque N.
+        
 
 
 
@@ -131,8 +117,7 @@ def ejecutar():
     print("E = Efectivo")
     print("T = Tarjeta")
     metodo = leer_opcion("Elige (E/T): ", ["E", "T"])
-    #Mostramos los métodos disponibles, solicitamos una opción válida con leer_opción y guardamos
-    #el método elegido para usarlo en cálculos posteriores.
+    
 
     #=====CÁLCULOS=====
     subtotal_general = 0
@@ -174,18 +159,16 @@ def ejecutar():
     print("=" * ancho)
     print(f"Cliente: {cliente}")
     print(f"Celular: {celular}")
-    print(f"Tipo de pedido: {nombres_tipo[tipo]}") #Diccionario, si tipo contiene "D", nombres_tipo[tipo] devuelve
-                                                   #Delivery. Asi muestra el nombre completo en lugar de la letra.
+    print(f"Tipo de pedido: {nombres_tipo[tipo]}") 
+                                                   
     print("-" * ancho)
     print(f"{'Producto': <20}{'Cant.': >6}{'P.Unit.': >11}{'Subtotal': >13}")
 
-    #F-string permite usar instrucciones de formato(:<20y:>6). Se divide en tres: 'Producto' texto a imprimir, ":" indica
-    #el comienzo del formato, y <20 alinea el texto a la izquierda dentro de un espacio de 20 caracteres.
+    
 
     for i in range(len(nombres)):
         print(f"{nombres[i]:<20}{cantidades[i]:>6}{f'S/ {precios[i]:.2f}':>11}{f'S/ {subtotales[i]:.2f}':>13}")
-        #El for recorre los productos, y el print muestra los datos: nombre de producto alineado <20 junto con su encabezado
-        #Producto <20. Todos están alineados; Cant. >6 del encabezado con cantidades[i]: >6, etc.
+        
 
     print("-" * ancho)
     print(f"{'Subtotal:':<30}{f'S/ {subtotal_general:.2f}':>20}")
