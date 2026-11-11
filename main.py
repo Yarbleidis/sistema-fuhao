@@ -3,18 +3,12 @@
 # Fundamentos de Programación 1
 # ======================================
 
-#Import trae el código de otro archivo .py que está en la misma carpeta.
-#Cada módulo es un archivo distinto hecho por un integrante del grupo.
-#Más abajo se llama a la función ejecutar() de cada uno.
-
 import modulo_pedidos
 import modulo_ventas
 import modulo_platos
 import modulo_horarios
 import modulo_delivery
 
-#Leer_opcion recibe un mensaje y una lista de opciones válidas.
-#While repite la solicitud hasta que la opción ingresada pertenezca a la lista, y return devuelve la respuesta.
 
 def leer_opcion(mensaje, valida):
     opcion = input(mensaje).strip().upper()
@@ -23,8 +17,6 @@ def leer_opcion(mensaje, valida):
         opcion = input(mensaje).strip().upper()
     return opcion
 
-#Opcion inicia en vacío para que el while entre la primera vez.
-#El menú se repite después de cada módulo, hasta que el usuario elija 6 (Salir).
 
 opcion = ""
 while opcion != "6":
@@ -41,9 +33,6 @@ while opcion != "6":
     print("6 = Salir")
 
     opcion = leer_opcion("Elige (1/2/3/4/5/6): ", ["1", "2", "3", "4", "5", "6"])
-
-    # Según la opción elegida, se llama a la función ejecutar() del módulo correspondiente.
-    #Cuando el módulo termina, el programa vuelve al inicio del while y muestra el menú otra vez.
 
     if opcion == "1":
         modulo_pedidos.ejecutar()
